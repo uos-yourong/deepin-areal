@@ -256,6 +256,7 @@ docker run -d --name deepin-train   --gpus '"device=4,5"'   --privileged --netwo
 ### 7.1 第一步：宿主机起 env_worker（VM 环境，耗时 ~30s）
 
 ```bash
+### 不用这个用8 是可以的
 cd /mnt/data/yr/code/rl_osworld/os_env && MANAGE_UFW_FOR_WORKER_PORT=0 setsid nohup /mnt/data/yr/code/rl_osworld/myenv_areal/bin/python desktop_env/env_worker.py   --provider libvirt --os-type deepin --headless   --port 8300 --host 127.0.0.1   --cache-dir /mnt/data/yr/code/rl_osworld/tmp1/worker_cache   </dev/null >> /mnt/data/yr/code/rl_osworld/tmp1/env_worker.log 2>&1 &
 ```
 
@@ -310,7 +311,7 @@ cd /AReaL && VLM_API_BASE=https://101.89.57.42:5911 VLM_API_KEY=xxx VLM_MODEL=ki
 
 ```bash
 # 起池（训练前）
-/mnt/data/yr/code/rl_osworld/start_env_pool.sh 4
+/mnt/data/yr/code/rl_osworld/start_env_pool.sh 4 ### 4 vm
 
 # 跑训练（n_trajs 可放心设 4，甚至 max_concurrent_rollouts=2 配 8 个 worker）
 docker exec deepin-train bash -c '... trial_name=xxx n_trajs=4 ...'
