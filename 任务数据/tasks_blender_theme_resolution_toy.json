@@ -1,0 +1,57 @@
+[
+    {   
+        "evaluator": {"func": "infeasible"},
+        "id":1,
+        "instruction": "点击select按钮",
+        "config": [
+            {
+                "type": "command",
+                "parameters": {
+                    "command": "dde-dconfig --set -a org.deepin.dde.appearance -r org.deepin.dde.appearance -k Global_Theme -v \"flow.light\"",
+                    "shell": true
+                }
+            },
+            {
+                "type": "download",
+                "parameters": {
+                    "files": [
+                        {
+                            "url": "https://www.modelscope.cn/datasets/yr2877992943/openAPP/resolve/master/change_resolu.sh",
+                            "path": "/home/uos/Documents/change_resolu.sh"
+                        },
+                        {
+                            "url": "https://www.modelscope.cn/datasets/yr2877992943/openAPP/resolve/master/change_resolu1.sh",
+                            "path": "/home/uos/Documents/change_resolu1.sh"
+                        },
+                        {
+                            "url": "https://modelscope.cn/datasets/yr2877992943/design_tool_init_state/resolve/master/1.blend",
+                            "path": "/home/uos/Documents/1.blend"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "command": "chmod 777 /home/uos/Documents/*",
+                    "shell": true
+                }
+            },
+            {
+                "type": "execute",
+                "parameters": {
+                    "shell": true,
+                    "command": "bash /home/uos/Documents/change_resolu1.sh"
+                }
+            },
+            {
+                "type": "launch",
+                "parameters": {
+                    "shell": true,
+                    "command": "/home/uos/Downloads/blender-5.2.0-linux-x64/blender /home/uos/Documents/1.blend"
+                }
+            }
+        ],
+        "guiagents": []
+    }
+]
