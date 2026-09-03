@@ -9,3 +9,5 @@
 
 环境见 《areal_osworld_architecture.md》 2 
 
+os_env启动的坑见《areal_osworld_architecture.md》7
+
