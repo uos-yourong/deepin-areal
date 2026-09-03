@@ -12,7 +12,7 @@
 
 **AReaL 没有支持 virsh 启动 Deepin 环境**
 
-osworld没有支持virsh启动deepin,所以用os_env 启动vm(env) pool：用 `virsh` 启动 Deepin OS，在 VM 内部启动 `launch`、`screen` 等服务。
+官方osworld没有支持virsh启动deepin,所以用os_env(by wangchaoxiao) 启动vm(env) pool：用 `virsh` 启动 Deepin OS，在 VM 内部启动 `launch`、`screen` 等服务。
 
 ---
 
